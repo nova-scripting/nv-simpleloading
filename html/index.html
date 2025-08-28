@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="video-background video-container noselect">
+        <iframe width="150%" height="150%" src="https://www.youtube.com/embed/vyC4UWwd14o?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="loadingScreen">
+        <canvas id="bgCanvas"></canvas>
+        <div id="logoContainer" style="position:absolute; left: 32%;">
+            <div id="logo">
+                <img src="img/logo.png" alt="Server Logo" />
+            </div>
+            <div id="textContainer">
+                <p id="mainText">NOVA SCRIPTS</p>
+                <p id="loadingText">LOADING</p>
+            </div>
+        </div>
+
+        <div id="audioPlayerContainer">
+            <audio id="audioPlayer" src="song.mp3" autoplay="true" hidden="true" loop="true"></audio>
+            <div id="playPauseButton" class="playerButton">Pause</div>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+        </div>
+        
+        <div id="teamContainer">
+            <h2 id="teamHeader">STAFF TEAM</h2>
+            <div class="person">
+                <img src="img/owner-icon.png">
+                <span class="menu-text">Noxy<br>
+                    <div class="owner-role">OWNER</div>
+                </span>
+            </div>
+            <div class="person">
+                <img src="img/owner-icon.png">
+                <span class="menu-text">Bomba<br>
+                    <div class="owner-role">OWNER</div>
+                </span>
+            </div>
+            <div class="person">
+                <img src="img/manag-icon.png">
+                <span class="menu-text">Milo<br>
+                    <div class="manager-role">MANAGER</div>
+                </span>
+            </div>
+            <div class="person">
+                <img src="img/dev-icon.png">
+                <span class="menu-text">NOVA SCRIPTS<br>
+                    <div class="developer-role">DEVELOPER</div>
+                </span>
+            </div>
+            <div class="person">
+                <img src="img/admin-icon.png">
+                <span class="menu-text">NOVA SCRIPTS<br>
+                    <div class="admin-role">ADMIN</div>
+                </span>
+            </div>
+            <div class="person">
+                <img src="img/admin-icon.png">
+                <span class="menu-text">NOVA SCRIPTS<br>
+                    <div class="admin-role">ADMIN</div>
+                </span>
+            </div>
+            <div class="person">
+                <img src="img/admin-icon.png">
+                <span class="menu-text">NOVA SCRIPTS<br>
+                    <div class="admin-role">ADMIN</div>
+                </span>
+            </div>
+        </div>
+
+        <div id="serverInfoContainer">
+            <h2 id="serverInfoHeader">SERVER INFORMATION</h2>
+            <p id="serverInfoText">
+                FIVEM SERVER - NOVA-SCRIPTING.TEBEX.IO<br>
+                A roleplay based server where you can play as anything! We are founded to help players,
+                here you will find various competitions, 
+                some rewards and lots of things to do.
+                Have a lot of fun with us, and if anything happens, just post!
+            </p>
+        </div>
+
+        <div id="updatesContainer">
+            <h2 id="updatesHeader">UPDATES</h2>
+            <div class="updateItem">
+                <img src="img/updates.png" alt="Develop Icon" class="updateIcon">
+                <div class="updateContent">
+                    <h3 class="updateTitle">UPDATE v1.2</h3>
+                    <p class="updateText">We add new VIP SYSTEM!</p>
+                    <p class="updateDate">Date: 16.08.2024  </p>
+                </div>
+            </div>
+            <div class="updateItem">
+                <img src="img/updates.png" alt="Develop Icon" class="updateIcon">
+                <div class="updateContent">
+                    <h3 class="updateTitle">UPDATE v1.1</h3>
+                    <p class="updateText">Fixed some critical bugs that were affecting the gameplay experience.</p>
+                    <p class="updateDate">Date: 10.08.2024</p>
+                </div>
+            </div>
+            <div class="updateItem">
+                <img src="img/updates.png" alt="Develop Icon" class="updateIcon">
+                <div class="updateContent">
+                    <h3 class="updateTitle">UPDATE v1.0</h3>
+                    <p class="updateText">Optimisations have been made to improve server performance.</p>
+                    <p class="updateDate">Date: 02.08.2024</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="socialLinks">
+            <a href="#" onclick="window.invokeNative('openUrl', 'https://discord.gg/SaykTBuNjX'); return false;" class="socialLink">
+                <img src="img/discord.png" alt="Discord Logo" />
+            </a>
+            <a href="#" onclick="window.invokeNative('openUrl', 'https://github.com/nova-scripting'); return false;" class="socialLink">
+                <img src="img/web.png" alt="Web Logo" />
+            </a>
+            <a href="#" onclick="window.invokeNative('openUrl', 'https://instagram.com/nova-scripting'); return false;" class="socialLink">
+                <img src="img/instagram.png" alt="Instagram Logo" />
+            </a>
+            <a href="#" onclick="window.invokeNative('openUrl', 'https://www.youtube.com/@nova-scripting'); return false;" class="socialLink">
+                <img src="img/youtube.png" alt="YouTube Logo" />
+            </a>
+        </div>
+
+        <div id="loadingBarContainer">
+            <div id="loadingBar"></div>
+        </div>
+
+        <div id="percentage">Loading..</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

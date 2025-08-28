@@ -1,0 +1,393 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Archivo Black', sans-serif; 
+}
+
+.video-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: -1; 
+    overflow: hidden; 
+    filter: blur(8px);
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%; 
+    height: 150%; 
+    transform: translate(-50%, -50%); 
+    pointer-events: none; 
+}
+
+#loadingScreen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    color: white;
+    z-index: 1000;
+    padding: 20px;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#logoContainer {
+    display: flex;
+    align-items: center; 
+    z-index: 10; 
+}
+
+#logo img {
+    width: 120px; 
+    height: auto; 
+    margin-right: 15px; 
+}
+
+#textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#mainText {
+    color: #FFD700;
+    font-size: 28px;
+    margin: 0;
+}
+
+#loadingText {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+}
+
+#socialLinks {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 80%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.socialLink img {
+    width: 50px;
+    height: auto;
+
+}
+
+.socialLink:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#loadingBarContainer {
+    width: 60%; 
+    height: 40px; 
+    position: absolute; 
+    bottom: 80px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: transparent; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    z-index: 10; 
+}
+
+#loadingBar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #4b0082, #c749ee);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+#percentage {
+    margin-top: 10px;
+    font-size: 16px; 
+    font-weight: bold;
+    position: absolute;
+    bottom: 40px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+
+#teamContainer {
+    position: absolute; 
+    top: 35%; 
+    left: 13%; 
+    transform: translate(-50%, -20%); 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(10, 10, 10, 0.8));
+    border-radius: 15px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); 
+    padding: 20px; 
+    color: white; 
+    width: 15%; 
+    max-height: 400px; 
+    overflow-y: auto; 
+    z-index: 10; 
+}
+
+#teamHeader {
+    font-size: 28px; 
+    text-align: center; 
+    padding-bottom: 10px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6); 
+    margin-bottom: 10px; 
+}
+
+.person {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.person img {
+    width: 60px;
+    margin-right: 15px; 
+    border-radius: 50%; 
+}
+
+.menu-text {
+    text-align: left; 
+}
+
+.owner-role {
+    color: #a02323; 
+}
+
+.manager-role {
+    color: rgb(177, 233, 24); 
+}
+
+.developer-role {
+    color: rgb(49, 49, 48); 
+}
+
+.admin-role {
+    color: rgb(148, 49, 36); 
+}
+
+
+#serverInfoContainer {
+    position: absolute; 
+    top: calc(10% + 260px);  
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(10, 10, 10, 0.8)); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); 
+    padding: 20px; 
+    color: white; 
+    z-index: 10; 
+    width: 35%; 
+}
+
+#serverInfoHeader {
+    font-size: 28px; 
+    text-align: center; 
+    padding-bottom: 10px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6); 
+    margin-bottom: 10px; 
+}
+
+#serverInfoText {
+    font-size: 18px; 
+    line-height: 1.5; 
+}
+
+#updatesContainer {
+    position: absolute; 
+    top: 35%; 
+    left: 87%; 
+    transform: translate(-50%, -20%); 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(10, 10, 10, 0.8)); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    padding: 20px; 
+    color: white; 
+    width: 15%; 
+    max-height: 400px; 
+    overflow-y: auto; 
+    z-index: 10; 
+}
+
+#updatesHeader {
+    font-size: 28px; 
+    text-align: center; 
+    padding-bottom: 10px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6); 
+    margin-bottom: 10px; 
+}
+
+.updateItem {
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 15px; 
+}
+
+.updateIcon {
+    width: 30px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+.updateContent {
+    flex-grow: 1;
+}
+
+.updateTitle {
+    font-size: 20px; 
+    margin: 0;
+}
+
+.updateText {
+    font-size: 16px; 
+    margin: 5px 0; 
+}
+
+.updateDate {
+    font-size: 14px; 
+    color: rgba(255, 255, 255, 0.6); 
+}
+
+#updatesContainer::-webkit-scrollbar {
+    width: 12px; 
+}
+
+#updatesContainer::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.8);
+    border-radius: 10px; 
+}
+
+#updatesContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4); 
+    border-radius: 10px; 
+}
+
+#updatesContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6); 
+}
+
+
+#updatesContainer {
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(255, 255, 255, 0.4) rgba(10, 10, 10, 0.8); 
+}
+
+#teamContainer::-webkit-scrollbar {
+    width: 12px; 
+}
+
+#teamContainer::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.8); 
+    border-radius: 10px; 
+}
+
+#teamContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4); 
+    border-radius: 10px;
+}
+
+#teamContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6); 
+}
+
+
+#teamContainer {
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(255, 255, 255, 0.4) rgba(10, 10, 10, 0.8); 
+}
+
+
+#audioPlayerContainer {
+    position: absolute;
+    top: 50px; 
+    left: 63%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center; 
+    z-index: 10; 
+}
+
+.playerButton {
+    background: #c749ee;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; 
+    transition: background 0.3s;
+}
+
+.playerButton:hover {
+    background: #4b0082; 
+}
+
+#volumeControl {
+    -webkit-appearance: none; 
+    width: 100px; 
+    height: 5px; 
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px; 
+    outline: none; 
+}
+
+#volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    width: 15px; 
+    height: 15px; 
+    border-radius: 50%; 
+    background: #c749ee; 
+}
+
+
+#progressBarContainer {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative; 
+}
+
+#progressBar {
+    height: 100%;
+    background: #c749ee; 
+    width: 0%; 
+}
